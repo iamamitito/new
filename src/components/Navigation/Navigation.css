@@ -1,0 +1,23 @@
+.navigation {
+  display: flex;
+  bottom: 0;
+  position: absolute;
+  bottom: 50px;
+}
+
+.navigation .nav-btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.navigation p {
+  margin: 0 25px;
+}
+
+@media (min-width: 500px) {
+  .navigation {
+    bottom: 10%;
+  }
+}

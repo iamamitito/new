@@ -1,0 +1,36 @@
+.modal {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #eee;
+  padding: 20px;
+  opacity: 1;
+  width: 90vw;
+  border-radius: 10px;
+  z-index: 30;
+}
+
+.modal.hide {
+  display: none;
+}
+.modal input,
+.modal textarea {
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #eee;
+  margin: 10px auto;
+  font-family: "Lato", sans-serif;
+}
+.modal input:focus,
+.modal textarea:focus {
+  outline: none;
+}
+.modal textarea {
+  height: 100px;
+}
+
+@media (min-width: 500px) {
+  .modal {
+    width: 50vw;
+  }
+}

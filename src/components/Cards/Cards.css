@@ -1,0 +1,9 @@
+.cards {
+  perspective: 1000px;
+  display: flex;
+  height: fit-content;
+  width: fit-content;
+  max-width: 98%;
+  margin: 0;
+  position: relative;
+}

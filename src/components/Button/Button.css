@@ -1,0 +1,26 @@
+.btn {
+  background-color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: rgb(100, 100, 100);
+  border: 0;
+  transition: transform 0.3s;
+  color: #fff;
+}
+.btn:hover {
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1%);
+  background-color: rgb(41, 41, 41);
+}
+.btn:focus {
+  outline: none;
+}
+
+.form-btn {
+  position: absolute;
+  top: 50px;
+  margin: auto;
+}

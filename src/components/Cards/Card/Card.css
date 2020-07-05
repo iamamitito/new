@@ -1,0 +1,96 @@
+.card {
+  position: absolute;
+  opacity: 0;
+  font-size: 16px;
+  top: 50%;
+  left: 50%;
+  height: 60vh;
+  width: 80vw;
+  transform: translateX(50%) rotateY(-10deg);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  margin-left: -40vw;
+  margin-top: -30vh;
+}
+
+.card.active {
+  opacity: 1;
+  z-index: 20;
+  transform: translateX(0) rotateY(0deg);
+}
+
+.inner-card {
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease;
+}
+
+.card.show-answer .inner-card {
+  transform: rotateX(180deg);
+}
+
+.inner-card-front,
+.inner-card-back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.inner-card-front {
+  transform: rotateX(0deg);
+  z-index: 2;
+  background-color: rgb(140, 196, 186);
+  color: #fff;
+  text-shadow: 0 1px 2px #aaa;
+  text-align: center;
+}
+.inner-card-back {
+  transform: rotateX(180deg);
+  color: rgb(51, 51, 51);
+  background-color: #fff;
+  overflow: scroll;
+}
+
+.card .delete {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  color: #eee;
+  cursor: pointer;
+}
+.card .flip {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  margin: 10px;
+  padding: 0 10% 10% 0;
+  color: #eee;
+  cursor: pointer;
+}
+.inner-card-back .flip {
+  color: #ddd;
+}
+
+@media (min-width: 500px) {
+  .card {
+    height: 50vh;
+    width: 40vw;
+    margin-left: -20vw;
+    margin-top: -25vh;
+    font-size: 20px;
+  }
+}
