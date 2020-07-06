@@ -136,7 +136,7 @@ class Cards extends Component {
                 </Modal>
                 <Button btnClass="btn clear-btn"
                     clicked={this.deleteAllCards}>
-                    Clear all
+                    <i className="fas fa-trash"></i> Clear all
                 </Button>
             </React.Fragment>
         );
