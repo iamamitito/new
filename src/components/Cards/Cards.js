@@ -7,7 +7,7 @@ import Modal from '../Modal/Modal';
 
 class Cards extends Component {
     state = {
-        cards: [],
+        cards: this.getCardsData(),
         showAnswer: false,
         index: 0,
         showForm: false,
@@ -23,13 +23,17 @@ class Cards extends Component {
                 cards: cards,
                 showForm: !this.state.showForm
             });
+            localStorage.setItem('cards', JSON.stringify(cards));
         } else {
-            alert('enter something bitch');
+            alert('A question and an answer must be entered');
         }
         this.question.value = '';
         this.answer.value = '';
-    };
-
+    }
+    getCardsData() {
+        const cards = JSON.parse(localStorage.getItem('cards'));
+        return cards === null ? [] : cards;
+    }
     showAnswerHandler = () => {
         this.setState({
             showAnswer: !this.state.showAnswer
@@ -54,10 +58,15 @@ class Cards extends Component {
             return null;
         }
     }
-    deleteCardHandler = (cardIndex) => {
+    deleteCardHandler = () => {
         const cards = [...this.state.cards];
-        cards.splice(cardIndex, 1);
+        const localCards = JSON.parse(localStorage.getItem('cards'));
+
+        cards.splice(this.state.index, 1);
+        localCards.splice(this.state.index, 1);
+
         this.setState({ cards: cards });
+        localStorage.setItem('cards', JSON.stringify(localCards));
     }
 
     render() {

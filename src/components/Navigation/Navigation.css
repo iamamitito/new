@@ -11,6 +11,9 @@
   cursor: pointer;
   font-size: 16px;
 }
+.navigation .nav-btn:focus {
+  outline: none;
+}
 
 .navigation p {
   margin: 0 25px;
