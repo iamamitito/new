@@ -67,6 +67,14 @@ class Cards extends Component {
 
         this.setState({ cards: cards });
         localStorage.setItem('cards', JSON.stringify(localCards));
+        if (this.state.index === this.state.cards.length - 1) {
+            this.prevCardHandler();
+        }
+    }
+    deleteAllCards = () => {
+        localStorage.removeItem('cards');
+        this.setState({ cards: [] });
+        window.location.reload();
     }
 
     render() {
@@ -103,7 +111,7 @@ class Cards extends Component {
                 <Navigation
                     next={this.nextCardHandler}
                     prev={this.prevCardHandler}
-                    currentCard={cardsLength > 0 ? (cardsIndex + 1) + '/' + cardsLength : cardsIndex + '/' + cardsLength}
+                    currentCard={cardsLength > 0 ? (cardsIndex + 1) + '/' + cardsLength : '0/0'}
                 />
                 <Modal
                     modalClass={this.state.showForm ? 'modal' : 'modal hide'}
@@ -126,6 +134,10 @@ class Cards extends Component {
                         <button type="submit" className="btn">Add</button>
                     </form>
                 </Modal>
+                <Button btnClass="btn clear-btn"
+                    clicked={this.deleteAllCards}>
+                    Clear all
+                </Button>
             </React.Fragment>
         );
     }

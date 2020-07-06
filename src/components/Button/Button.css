@@ -24,3 +24,8 @@
   top: 50px;
   margin: auto;
 }
+.clear-btn {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+}
