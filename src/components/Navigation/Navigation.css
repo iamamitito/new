@@ -3,6 +3,7 @@
   bottom: 0;
   position: absolute;
   bottom: 100px;
+  color: rgb(41, 41, 41);
 }
 
 .navigation .nav-btn {
@@ -10,6 +11,7 @@
   background-color: transparent;
   cursor: pointer;
   font-size: 16px;
+  color: rgb(41, 41, 41);
 }
 .navigation .nav-btn:focus {
   outline: none;

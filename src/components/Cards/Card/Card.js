@@ -14,6 +14,7 @@ const card = (props) => {
                 <div className="inner-card-back">
                     <div className="flip"
                         onClick={props.clicked}><i className="fas fa-sync-alt"></i></div>
+                    <div className="delete" onClick={props.delete}><i className="fas fa-trash-alt"></i></div>
                     <p>{props.answer}</p>
                 </div>
             </div>
